@@ -27,6 +27,7 @@ const store = createStore({
             imgSrc: halibut,
             description: "Everyone's favorite white fish. We will cut it to the size you want and ship it.",
             price: 90,
+            prodQuantity: 3,
           },
           {
             id: 2,
@@ -34,6 +35,7 @@ const store = createStore({
             imgSrc: lobster,
             description: "These tender, mouth-watering beauties are a fantastic hit at any dinner party.",
             price: 70,
+            prodQuantity: 2,
           },
           {
             id: 3,
@@ -41,6 +43,7 @@ const store = createStore({
             imgSrc: seaScallop,
             description: "Big sweet and tender Scallops.",
             price: 50,
+            prodQuantity: 7,
           },
         ],
     };

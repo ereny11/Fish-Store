@@ -10,5 +10,8 @@ export default {
     },
     cart(state) {
       return state.cart;
-    }
+    },
+    prodQuantity(state) {
+      return state.prodQuantity;
+    },
   };

@@ -31,6 +31,7 @@
       "imgSrc",
       "price",
       "qty",
+      "prodQuantity",
     ],
     computed: {
       itemTotal() {

@@ -6,6 +6,7 @@
         <td>
           <p class="product-title">{{ model }} </p>
           <p class="product-desciption">{{ description }} </p>
+          <p class="product-desciption">Available Quantity: {{ prodQuantity }} </p>
           <button @click="addToCart" class="page-btn">Add to Cart</button>
           
         </td>
@@ -25,6 +26,7 @@
       "imgSrc",
       "description",
       "price",
+      "prodQuantity",
     ],
     methods: {
       addToCart() {
@@ -33,6 +35,7 @@
           model: this.model,
           imgSrc: this.imgSrc,
           price: this.price,
+          prodQuantity: this.prodQuantity,
         });
       },
     },

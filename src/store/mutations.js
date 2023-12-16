@@ -5,22 +5,33 @@ export default {
       const productInCartIndex = state.cart.findIndex(
         (ci) => ci.id === productData.id
       );
-      if (productInCartIndex >= 0) {
-        state.cart[productInCartIndex].qty++;
-      } else {
-        const newItem = {
-          id: productData.id,
-          model: productData.model,
-          imgSrc: productData.imgSrc,
-          description: productData.description,
-          price: productData.price,
-          qty: 1,
-        };
-        state.cart.push(newItem);
-      }
-      state.qty++;
+        if(productData.prodQuantity > 0){
+          if (productInCartIndex >= 0) {
+            state.cart[productInCartIndex].qty++;
+            // productData.prodQuantity--;
+          } else {
+            const newItem = {
+              id: productData.id,
+              model: productData.model,
+              imgSrc: productData.imgSrc,
+              description: productData.description,
+              price: productData.price,
+              prodQunatity: productData.prodQuantity,
+              qty: 1,
+            };
+            state.cart.push(newItem);
+          }
+          productData.prodQuantity--;
+          state.qty++;
+        }
+        else{
+          alert("Sorry, this product is out of stock Now!")
+        }
+        
+      
       state.total += productData.price;
       localStorage.setItem('storedState', JSON.stringify(state))
+      // console(state.prodQuantity);
     },
 
     removeProductFromCart(state, payload) {

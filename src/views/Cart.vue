@@ -17,6 +17,7 @@
                                 :imgSrc="product.imgSrc"
                                 :description="product.description"
                                 :price="product.price"
+                                :prodQunatity="product.prodQunatity"
                                 :qty="product.qty"
                               ></CartCard>
                             </tbody>

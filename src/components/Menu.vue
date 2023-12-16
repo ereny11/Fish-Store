@@ -1,14 +1,31 @@
 <template>
-  <div id="nav">
-    <router-link to="/">All Products</router-link>
-    <router-link to="/inventory">Inventory</router-link>
-    <router-link to="/cart">Cart</router-link>
-    <span class="counter-cart" v-if="socketCart > 0"> {{ socketCart }} </span>
+  <div class="navbar" id="nav">
+    <ul class="navbar-nav mx-auto flex-row">
+      <li class="nav-item">
+        <router-link to="/">All Products</router-link>
+      </li>
+      <li class="nav-item">
+      <router-link to="/inventory">Inventory</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/cart">Cart</router-link>  
+        <span class="counter-cart" v-if="socketCart > 0"> {{ socketCart }} </span>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" v-if="!user">
+      <router-link to="/register">Register</router-link>
+    </ul>
+    <ul  class="navbar-nav ml-auto" v-if="user">
+      <router-link to="/login">Log out</router-link>
+    </ul>
+    
   </div>
 </template>
 <script>
     
     export default {
+        name: 'Menu',
+        props: ['user'],
         computed: {
             socketCart() {
             return this.$store.getters["quantity"];
